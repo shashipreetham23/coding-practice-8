@@ -84,7 +84,7 @@ app.post('/todos/',async(request,response)=>{
     INSERT INTO 
     todo (id,todo,priority,status)
     VALUES 
-    {${id},'${todo}','${priority}','${status}'};`;
+    (${id},'${todo}','${priority}','${status}');`;
     await db.run(postTodo);
     response.send('Todo Successfully Added');
 });
@@ -117,7 +117,7 @@ app.put('/todos/:todoId/',async(request,response)=>{
     UPDATE todo
     SET 
         todo='${todo}',
-        priority='${priority}'
+        priority='${priority}',
         status='${status}'
     WHERE id=${todoId};`;
     await db.run(updateTodo);
