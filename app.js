@@ -20,7 +20,7 @@ const initDbAndServer=async()=>{
 };
 initDbAndServer();
 const hasPriorityAndStatusProperty=(request)=>{
-    return{request.priority!==undefined && request.status!==undefined};
+    return request.priority!==undefined && request.status!==undefined;
 };
 const hasPriorityProperty=(request)=>{
     return request.priority!==undefined;
